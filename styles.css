@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app-shell {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: black;
+  color: white;
+}
+
+.page-title {
+  padding: 16px;
+  margin: 0;
+}
+
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.message-name {
+  font-weight: bold;
+}
+
+.message-meta {
+  font-size: 12px;
+  color: gray;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
