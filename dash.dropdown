@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Messages Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="logo-block">
+        <span class="logo-top">THE NEW SCHOOL</span>
+        <span class="logo-bottom">IRL</span>
+      </div>
+      <button class="icon-button" aria-label="Inbox">
+        <span class="envelope"></span>
+      </button>
+    </header>
+
+    <h1 class="page-title">MESSAGES</h1>
+
+    <section class="messages-section">
+      <h2 class="section-heading">Messages</h2>
+
+      <ul class="message-list">
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Tsunemasa Fujiwara</div>
+            <div class="message-meta">Sent 2h ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Akshi Maiti</div>
+            <div class="message-meta">Sent 5h ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Ronish Sharma</div>
+            <div class="message-meta">Sent 10h ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Carla Budar</div>
+            <div class="message-meta">Seen just now</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Daniel Moore</div>
+            <div class="message-meta">Seen 2 min ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Ryu Nomura</div>
+            <div class="message-meta">Sent 1d ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Gianna Silva Beraun</div>
+            <div class="message-meta">Sent 3d ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+
+        <li class="message-item">
+          <div class="avatar"></div>
+          <div class="message-text">
+            <div class="message-name">Tyne Yang</div>
+            <div class="message-meta">Sent 1w ago</div>
+          </div>
+
+          <button class="more-button" aria-label="More options" aria-expanded="false">•••</button>
+
+          <div class="dropdown-menu" role="menu" aria-label="Chat actions">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item nav-item--active" aria-label="Home">
+        <span class="nav-icon nav-icon-home"></span>
+      </button>
+      <button class="nav-item" aria-label="Messages">
+        <span class="nav-icon nav-icon-chat"></span>
+      </button>
+      <button class="nav-item" aria-label="Search">
+        <span class="nav-icon nav-icon-search"></span>
+      </button>
+      <button class="nav-item" aria-label="Calendar">
+        <span class="nav-icon nav-icon-calendar"></span>
+      </button>
+      <button class="nav-item" aria-label="Profile">
+        <span class="nav-icon nav-icon-profile"></span>
+      </button>
+    </nav>
+  </div>
+
+  <script>
+    (function () {
+      const items = document.querySelectorAll('.message-item');
+
+      items.forEach((item) => {
+        const btn = item.querySelector('.more-button');
+        if (!btn) return;
+
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const isOpen = item.classList.contains('show-menu');
+
+          document.querySelectorAll('.message-item.show-menu').forEach((i) => {
+            i.classList.remove('show-menu');
+            const b = i.querySelector('.more-button');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('show-menu');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.message-item.show-menu').forEach((i) => {
+          i.classList.remove('show-menu');
+          const b = i.querySelector('.more-button');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
