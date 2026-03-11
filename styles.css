@@ -104,3 +104,202 @@ body {
   border-radius: 2px;
   position: relative;
 }
+/* make each row a positioning context */
+.message-item {
+  position: relative;
+}
+
+/* dropdown panel */
+.dropdown-menu {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(10px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+  min-width: 140px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 20;
+}
+
+/* little arrow "pointer" on the left edge of the dropdown */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* visible state */
+.message-item.show-menu .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* items inside dropdown */
+.dropdown-item {
+  width: 100%;
+  padding: 6px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* red options like in the mockup */
+.dropdown-item--danger {
+  color: #e53935;
+}
+
+.dropdown-item--danger-strong {
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+/* arrow button at end of row */
+.more-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 4px;
+}
+
+/* rotate arrow when open (optional) */
+.message-item.show-menu .more-button {
+  transform: rotate(180deg);
+}
+/* Bottom black bar */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 18px 12px;
+  background: #000;
+}
+
+/* transparent buttons */
+.bottom-nav-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* base icon style */
+.icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+/* house (home) */
+.icon-home {
+  border-radius: 0;
+}
+.icon-home::before,
+.icon-home::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  border: 2px solid #fff;
+}
+.icon-home::before {
+  top: 8px;
+  border-bottom: none;
+  transform: rotate(45deg);
+}
+.icon-home::after {
+  bottom: 3px;
+  top: 12px;
+  border-top: none;
+}
+
+/* chat bubble */
+.icon-chat {
+  border-radius: 999px;
+}
+.icon-chat::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(30deg);
+}
+
+/* magnifying glass */
+.icon-search {
+  border-radius: 999px;
+}
+.icon-search::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  right: -6px;
+  bottom: 2px;
+  transform: rotate(45deg);
+}
+
+/* calendar */
+.icon-calendar {
+  border-radius: 4px;
+}
+.icon-calendar::before,
+.icon-calendar::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  border-top: 2px solid #fff;
+}
+.icon-calendar::before {
+  top: 6px;
+}
+.icon-calendar::after {
+  top: 13px;
+}
+
+/* profile (circle with vertical bars) */
+.icon-profile {
+  border-radius: 999px;
+}
+.icon-profile::before,
+.icon-profile::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+}
+.icon-profile::before {
+  left: 6px;
+}
+.icon-profile::after {
+  right: 6px;
+}
