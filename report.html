@@ -30,9 +30,9 @@
 
         <ul class="report-list">
           <li class="report-item">
-            <button class="report-option report-option--selected">
+            <button class="report-option">
               <span>Harassment or bullying</span>
-              <span class="report-radio report-radio--selected"></span>
+              <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
@@ -79,13 +79,15 @@
   </div>
 
   <script>
-    // allow selecting a different reason
+    // nothing selected by default; only one option can be selected at a time
     (function () {
       const options = document.querySelectorAll('.report-option');
 
       options.forEach((opt) => {
         opt.addEventListener('click', () => {
+          // clear selection from all
           options.forEach((o) => o.classList.remove('report-option--selected'));
+          // select the one that was clicked
           opt.classList.add('report-option--selected');
         });
       });
