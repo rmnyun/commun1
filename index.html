@@ -37,7 +37,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -53,7 +53,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -69,7 +69,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -85,7 +85,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -101,7 +101,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -117,7 +117,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -133,7 +133,7 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
@@ -149,34 +149,15 @@
 
           <div class="dropdown-menu" role="menu" aria-label="Chat actions">
             <button class="dropdown-item" type="button">Profile</button>
-            <button class="dropdown-item dropdown-item--danger" type="button">Report</button>
+            <button class="dropdown-item dropdown-item--danger" type="button" data-action="report">Report</button>
             <button class="dropdown-item dropdown-item--danger-strong" type="button">Block</button>
           </div>
         </li>
       </ul>
     </section>
-
-    <!-- Bottom nav -->
-    <nav class="bottom-nav">
-      <button class="bottom-nav-btn" aria-label="Home">
-        <span class="icon icon-home"></span>
-      </button>
-      <button class="bottom-nav-btn" aria-label="Messages">
-        <span class="icon icon-chat"></span>
-      </button>
-      <button class="bottom-nav-btn" aria-label="Search">
-        <span class="icon icon-search"></span>
-      </button>
-      <button class="bottom-nav-btn" aria-label="Calendar">
-        <span class="icon icon-calendar"></span>
-      </button>
-      <button class="bottom-nav-btn" aria-label="Profile">
-        <span class="icon icon-profile"></span>
-      </button>
-    </nav>
   </div>
 
-  <!-- Dropdown behavior -->
+  <!-- Dropdown behavior + Report navigation -->
   <script>
     (function () {
       const items = document.querySelectorAll('.message-item');
@@ -210,6 +191,14 @@
           el.classList.remove('show-menu');
           const b = el.querySelector('.more-button');
           if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // navigate to report screen when "Report" is clicked
+      document.querySelectorAll('.dropdown-item.dropdown-item--danger').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.location.href = 'report.html';
         });
       });
     })();
