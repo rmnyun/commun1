@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Report – Harassment or bullying</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div class="logo-block">
+        <span class="logo-top">THE NEW SCHOOL</span>
+        <span class="logo-bottom">IRL</span>
+      </div>
+      <button class="icon-button" aria-label="Inbox / Messages">
+        <span class="envelope"></span>
+      </button>
+    </header>
+
+    <main class="report-main">
+      <h1 class="page-title">Report</h1>
+
+      <section class="report-section">
+        <h2 class="report-question">What types of harassment of bullying did you receive?</h2>
+        <p class="report-subtext">
+          Your report is anonymous, feel free to contact us if there are any issues – don't wait!
+        </p>
+
+        <ul class="report-list">
+          <li class="report-item">
+            <button class="report-option">
+              <span>Offensive, rude, or insulting messages</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+          <li class="report-item">
+            <button class="report-option">
+              <span>Shared secrets or embarrassing information</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+          <li class="report-item">
+            <button class="report-option">
+              <span>Cyberstalking/Threats</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+          <li class="report-item">
+            <button class="report-option">
+              <span>Exclusion</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+          <li class="report-item">
+            <button class="report-option">
+              <span>Trolling/Flaming</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+          <li class="report-item">
+            <button class="report-option">
+              <span>Other</span>
+              <span class="report-radio"></span>
+            </button>
+          </li>
+        </ul>
+
+        <button class="report-next-button">NEXT</button>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // nothing selected by default; only one option selectable at a time
+    (function () {
+      const options = document.querySelectorAll('.report-option');
+
+      options.forEach((opt) => {
+        opt.addEventListener('click', () => {
+          options.forEach((o) => o.classList.remove('report-option--selected'));
+          opt.classList.add('report-option--selected');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
