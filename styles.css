@@ -61,6 +61,31 @@ body {
   border: 2px solid #000;
   border-radius: 2px;
   position: relative;
+  box-sizing: border-box;
+}
+
+/* flap lines */
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  background: transparent;
+  border-top: 2px solid #000;
+}
+
+.envelope::before {
+  top: 8px;
+  transform: skewX(-35deg);
+  transform-origin: left center;
+}
+
+.envelope::after {
+  top: 8px;
+  transform: skewX(35deg);
+  transform-origin: right center;
 }
 
 /* Main page title */
