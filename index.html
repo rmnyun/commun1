@@ -212,5 +212,42 @@
       });
     })();
   </script>
+  <script>
+  (function () {
+    const items = document.querySelectorAll('.message-item');
+
+    items.forEach((item) => {
+      const btn = item.querySelector('.more-button');
+      if (!btn) return;
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = item.classList.contains('show-menu');
+
+        // close any other open menu
+        document.querySelectorAll('.message-item.show-menu').forEach((el) => {
+          el.classList.remove('show-menu');
+          const b = el.querySelector('.more-button');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+
+        // toggle this one
+        if (!isOpen) {
+          item.classList.add('show-menu');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // click anywhere else to close
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.message-item.show-menu').forEach((el) => {
+        el.classList.remove('show-menu');
+        const b = el.querySelector('.more-button');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
