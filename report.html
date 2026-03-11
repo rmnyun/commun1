@@ -30,43 +30,43 @@
 
         <ul class="report-list">
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="harassment">
               <span>Harassment or bullying</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="not-from-school">
               <span>May not be from this school</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="violence">
               <span>Violence or threat of violence</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="hate-speech">
               <span>Hate speech or symbols</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="impersonation">
               <span>Pretending to be someone else</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="hacked">
               <span>Account been hacked</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="other">
               <span>Other</span>
               <span class="report-radio"></span>
             </button>
@@ -79,16 +79,21 @@
   </div>
 
   <script>
-    // nothing selected by default; only one option can be selected at a time
     (function () {
       const options = document.querySelectorAll('.report-option');
 
       options.forEach((opt) => {
         opt.addEventListener('click', () => {
-          // clear selection from all
+          // only one selected at a time
           options.forEach((o) => o.classList.remove('report-option--selected'));
-          // select the one that was clicked
           opt.classList.add('report-option--selected');
+
+          const reason = opt.getAttribute('data-reason');
+
+          // if first option (harassment or bullying), go to detail screen
+          if (reason === 'harassment') {
+            window.location.href = 'report-harassment.html';
+          }
         });
       });
     })();
