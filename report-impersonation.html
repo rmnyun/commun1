@@ -55,15 +55,23 @@
   </div>
 
   <script>
-    // nothing selected by default; only one option selectable at a time
+    // select exactly one option; NEXT goes to search screen
     (function () {
       const options = document.querySelectorAll('.report-option');
+      const nextBtn = document.querySelector('.report-next-button');
+      let hasSelection = false;
 
       options.forEach((opt) => {
         opt.addEventListener('click', () => {
           options.forEach((o) => o.classList.remove('report-option--selected'));
           opt.classList.add('report-option--selected');
+          hasSelection = true;
         });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (!hasSelection) return; // do nothing if user hasn't chosen
+        window.location.href = 'report-impersonation-search.html';
       });
     })();
   </script>
