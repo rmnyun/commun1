@@ -312,3 +312,8 @@ body {
   letter-spacing: 0.1em;
   cursor: pointer;
 }
+
+.report-option {
+  color: inherit;
+  text-decoration: none;
+}
