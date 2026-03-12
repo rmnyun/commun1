@@ -79,25 +79,36 @@
   </div>
 
   <script>
-    // nothing selected by default; only one option at a time;
-    // if "Harassment or bullying" is selected, NEXT goes to report-harassment.html
-    (function () {
-      const options = document.querySelectorAll('.report-option');
-      const nextBtn = document.querySelector('.report-next-button');
-      let selectedReason = null;
+  // nothing selected by default; only one option at a time;
+  // NEXT goes to different pages depending on selected reason
+  (function () {
+    const options = document.querySelectorAll('.report-option');
+    const nextBtn = document.querySelector('.report-next-button');
+    let selectedReason = null;
 
-      options.forEach((opt) => {
-        opt.addEventListener('click', () => {
-          options.forEach((o) => o.classList.remove('report-option--selected'));
-          opt.classList.add('report-option--selected');
-          selectedReason = opt.getAttribute('data-reason');
-        });
+    options.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        options.forEach((o) => o.classList.remove('report-option--selected'));
+        opt.classList.add('report-option--selected');
+        selectedReason = opt.getAttribute('data-reason');
       });
+    });
 
-      nextBtn.addEventListener('click', () => {
-        if (selectedReason === 'harassment') {
-          window.location.href = 'report-harassment.html';
+    nextBtn.addEventListener('click', () => {
+      if (!selectedReason) return;
+
+      if (selectedReason === 'harassment') {
+        window.location.href = 'report-harassment.html';
+      } else if (selectedReason === 'other') {
+        window.location.href = 'report-other.html';
+      } else if (selectedReason === 'impersonation') {
+        window.location.href = 'report-impersonation.html';
+      }
+    });
+  })();
+</script>
         }
+        
         // you can add other navigation cases here later if needed
       });
     })();
