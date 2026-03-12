@@ -30,44 +30,43 @@
 
         <ul class="report-list">
           <li class="report-item">
-            <!-- THIS is what makes it go to the harassment page -->
-            <a class="report-option" href="report-harassment.html">
+            <button class="report-option" data-reason="harassment">
               <span>Harassment or bullying</span>
               <span class="report-radio"></span>
-            </a>
+            </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="not-from-school">
               <span>May not be from this school</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="violence">
               <span>Violence or threat of violence</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="hate-speech">
               <span>Hate speech or symbols</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="impersonation">
               <span>Pretending to be someone else</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="hacked">
               <span>Account been hacked</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" data-reason="other">
               <span>Other</span>
               <span class="report-radio"></span>
             </button>
@@ -80,18 +79,26 @@
   </div>
 
   <script>
-    // Optional: single-selection visual behavior for the button options (not needed for the link)
+    // nothing selected by default; only one option at a time;
+    // if "Harassment or bullying" is selected, NEXT goes to report-harassment.html
     (function () {
       const options = document.querySelectorAll('.report-option');
+      const nextBtn = document.querySelector('.report-next-button');
+      let selectedReason = null;
 
       options.forEach((opt) => {
-        // Skip the link; it navigates away immediately
-        if (opt.tagName.toLowerCase() === 'a') return;
-
         opt.addEventListener('click', () => {
           options.forEach((o) => o.classList.remove('report-option--selected'));
           opt.classList.add('report-option--selected');
+          selectedReason = opt.getAttribute('data-reason');
         });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (selectedReason === 'harassment') {
+          window.location.href = 'report-harassment.html';
+        }
+        // you can add other navigation cases here later if needed
       });
     })();
   </script>
