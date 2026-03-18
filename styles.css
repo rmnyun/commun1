@@ -317,3 +317,322 @@ body {
   color: inherit;
   text-decoration: none;
 }
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app-shell {
+  max-width: 500px;
+  margin: auto;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* THE NEW SCHOOL / IRL */
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.logo-top {
+  font-weight: 700;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.logo-bottom {
+  font-weight: 800;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+/* Top-right envelope icon button */
+.icon-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.envelope {
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 2px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* flap lines */
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  background: transparent;
+  border-top: 2px solid #000;
+}
+
+.envelope::before {
+  top: 8px;
+  transform: skewX(-35deg);
+  transform-origin: left center;
+}
+
+.envelope::after {
+  top: 8px;
+  transform: skewX(35deg);
+  transform-origin: right center;
+}
+
+/* Main page title */
+.page-title {
+  margin: 14px 0 8px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #e2231a;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+/* Messages section */
+.messages-section {
+  flex: 1;
+  padding-bottom: 16px; /* no bottom nav, so smaller padding */
+}
+
+.section-heading {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #777;
+  letter-spacing: 0.12em;
+}
+
+/* Message list */
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  position: relative; /* for dropdown positioning */
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.message-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-name {
+  font-weight: bold;
+}
+
+.message-meta {
+  font-size: 12px;
+  color: gray;
+}
+
+/* More button (three dots) */
+.more-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+/* rotate arrow when open (optional) */
+.message-item.show-menu .more-button {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(10px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+  min-width: 140px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 20;
+}
+
+/* little arrow "pointer" on the side of the dropdown */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* visible state */
+.message-item.show-menu .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* items inside dropdown */
+.dropdown-item {
+  width: 100%;
+  padding: 6px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* red options */
+.dropdown-item--danger {
+  color: #e53935;
+}
+
+.dropdown-item--danger-strong {
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+/* -------- Report page -------- */
+
+.report-main {
+  padding-bottom: 24px;
+}
+
+.report-section {
+  padding: 16px;
+}
+
+.report-question {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.report-subtext {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+}
+
+/* Report list */
+.report-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.report-item {
+  border-top: 1px solid #e0e0e0;
+}
+
+.report-item:first-child {
+  border-top: none;
+}
+
+.report-option {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: none;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* radio circles */
+.report-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.report-option--selected .report-radio,
+.report-radio--selected {
+  border-color: #e2231a;
+  box-shadow: 0 0 0 2px #fff inset;
+  background: radial-gradient(circle at center, #e2231a 50%, transparent 51%);
+}
+
+/* NEXT button */
+.report-next-button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  background: #e2231a;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.report-option {
+  color: inherit;
+  text-decoration: none;
+}
