@@ -30,98 +30,67 @@
 
         <ul class="report-list">
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Offensive, rude, or insulting messages</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Shared secrets or embarrassing information</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Cyberstalking/Threats</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Exclusion</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Trolling/Flaming</span>
               <span class="report-radio"></span>
             </button>
           </li>
           <li class="report-item">
-            <button class="report-option">
+            <button class="report-option" type="button">
               <span>Other</span>
               <span class="report-radio"></span>
             </button>
           </li>
         </ul>
 
-        <button class="report-next-button">NEXT</button>
+        <button class="report-next-button" type="button">NEXT</button>
       </section>
     </main>
   </div>
 
   <script>
-    // nothing selected by default; only one option selectable at a time
     (function () {
       const options = document.querySelectorAll('.report-option');
+      const nextBtn = document.querySelector('.report-next-button');
+      let hasSelection = false;
 
       options.forEach((opt) => {
         opt.addEventListener('click', () => {
           options.forEach((o) => o.classList.remove('report-option--selected'));
           opt.classList.add('report-option--selected');
+          hasSelection = true;
         });
       });
+
+      nextBtn.addEventListener('click', () => {
+        if (!hasSelection) return;
+        window.location.href = 'report-confirmation.html';
+      });
     })();
-<script>
-  (function () {
-    const options = document.querySelectorAll('.report-option');
-    const nextBtn = document.querySelector('.report-next-button');
-    let hasSelection = false;
-
-    options.forEach((opt) => {
-      opt.addEventListener('click', () => {
-        options.forEach((o) => o.classList.remove('report-option--selected'));
-        opt.classList.add('report-option--selected');
-        hasSelection = true;
-      });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      if (!hasSelection) return; // require a choice
-      window.location.href = 'report-confirmation.html';
-    });
-  })();
-<script>
-  (function () {
-    const options = document.querySelectorAll('.report-option');
-    const nextBtn = document.querySelector('.report-next-button');
-    let hasSelection = false;
-
-    options.forEach((opt) => {
-      opt.addEventListener('click', () => {
-        options.forEach((o) => o.classList.remove('report-option--selected'));
-        opt.classList.add('report-option--selected');
-        hasSelection = true;
-      });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      if (!hasSelection) return; // require a choice
-      window.location.href = 'report-confirmation.html';
-    });
-  })();
-</script>
+  </script>
 </body>
 </html>
