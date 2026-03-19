@@ -84,6 +84,25 @@
         });
       });
     })();
-  </script>
+<script>
+  (function () {
+    const options = document.querySelectorAll('.report-option');
+    const nextBtn = document.querySelector('.report-next-button');
+    let hasSelection = false;
+
+    options.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        options.forEach((o) => o.classList.remove('report-option--selected'));
+        opt.classList.add('report-option--selected');
+        hasSelection = true;
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (!hasSelection) return; // require a choice
+      window.location.href = 'report-confirmation.html';
+    });
+  })();
+</script>
 </body>
 </html>
